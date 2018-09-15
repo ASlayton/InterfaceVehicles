@@ -6,18 +6,31 @@ using System.Collections.Generic;
 public interface IVehicle
 {
     // an int property called Wheels
+    int Wheels { get; set; }
     // an int property called Doors
+    int Doors { get; set; }
     // an int property called PassengerCapacity
+    int PassengerCapacity { get; set; }
     // a bool property called Winged
+    bool Winged { get; set; }
     // a string property called TransmissionType
+    string TransmissionType { get; set; }
     // a double property called EngineVolume
+    double EngineVolume { get; set; }
     // a double property called MaxWaterSpeed
+    double MaxWaterSpeed { get; set; }
     // a double property called MaxLandSpeed
+    double MaxLandSpeed { get; set; }
     // a double property called MaxAirSpeed
+    double MaxAirSpeed { get; set; }
     // a method called Start() that returns void
+    void Start();
     // a method called Stop() that returns void
+    void Stop();
     // a method called Drive() that returns void
+    void Drive();
     // a method called Fly() that returns void
+    void Fly();
 }
 
 public class JetSki : IVehicle
@@ -127,20 +140,34 @@ public class Program
     {
 
         // Build a collection of all vehicles that fly
+        List<string> FlyingVehicles = new List<string>();
+        FlyingVehicles.Add("Cessna");
+
 
         // With a single `foreach`, have each vehicle Fly()
+        foreach (var vehicle in FlyingVehicles)
+        {
+            vehicle.Fly();
+        }
 
 
 
         // Build a collection of all vehicles that operate on roads
-
+        List<string> RoadVehicles = new List<string>();
         // With a single `foreach`, have each road vehicle Drive()
-
+        foreach (var vehicle in RoadVehicles)
+        {
+            vehicle.Drive();
+        }
 
 
         // Build a collection of all vehicles that operate on water
-
+        List<string> waterVehicles = new List<string>();
         // With a single `foreach`, have each water vehicle Drive()
+        foreach (var vehicle in waterVehicles)
+        {
+            vehicle.Swim();
+        }
     }
 
 }
